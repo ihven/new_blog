@@ -4,18 +4,16 @@
 	<tr>
 	   <th>Title</th>
            <th>Text</th>
-           <th>Link</th>
-           <th>Edit</th>
-           <th>Delete</th>
+      
         </tr>
 
 	<%@articles.each do |article| %>
          <tr>
-              <td><%=article.title %></td>
-              <td><%=article.text  %></td>
-              <td><%=link_to 'show article', article_path(article)%></td>
-              <td><%=link_to 'edit article', edit_article_path(article)%></td>
-              <td><%=link_to 'delete article', article_path(article), method: :delete, data:{confirm: "Are You sure?"}%></td>
+              <td><%=article.title %></br>
+              <%=link_to 'show', article_path(article)%></td>
+              <td><%=article.text  %></br>
+              <%=link_to 'edit', edit_article_path(article)%>    
+              <%=link_to 'delete', article_path(article), method: :delete, data:{confirm: "Are You sure?"}%></td>
          </tr>
 	<%end%>
 </table>
