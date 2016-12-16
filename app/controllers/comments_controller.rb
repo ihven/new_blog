@@ -4,7 +4,11 @@ class CommentsController < ApplicationController
     
     def create
       @article = Article.find(params[:article_id])
-      @article.comments.create(comments_param)
+    #  @article.comments.create(comments_param)
+       aa =  @article.comments.new(comments_param)
+       aa.author = current_user.username
+       aa.save
+      
       redirect_to article_path(@article)
     end 
 
@@ -19,6 +23,6 @@ class CommentsController < ApplicationController
     private     
 
     def comments_param
-      params.require(:comment).permit(:author, :body)
+      params.require(:comment).permit(:author,:body)
     end 
 end

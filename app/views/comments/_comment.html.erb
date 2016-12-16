@@ -1,10 +1,18 @@
-<p>
+ <ul> 
+ <li>
+ <div class = "container">
+  <div class = "row">  
    <strong><%=comment.body%></strong></br>
    <i>author:
    <%=comment.author%></i></br>
-   <%=link_to 'Delete Comment', [comment.article, comment],
+   <i><%=link_to 'delete comment', [comment.article, comment],
  	 method: :delete,
- 	 data: { confirm: 'Are You sure?'} %>
+ 	 data: { confirm: 'Are You sure?'} %></i></br>
+ </div>
+</div>
+</li>
+</ul>
+ 
 
-</p>
+
 

@@ -1,19 +1,23 @@
-<h1>Listing articles</h1>
+<strong>Listing articles:</strong>
 
-<table>
-	<tr>
-	   <th>Title</th>
-           <th>Text</th>
-      
-        </tr>
 
+   <ul> 
 	<%@articles.each do |article| %>
-         <tr>
-              <td><%=article.title %></br>
-              <%=link_to 'show', article_path(article)%></td>
-              <td><%=article.text  %></br>
-              <%=link_to 'edit', edit_article_path(article)%>    
-              <%=link_to 'delete', article_path(article), method: :delete, data:{confirm: "Are You sure?"}%></td>
-         </tr>
+         <li>
+           <div class = "container">
+	     <div class = "row">
+             
+              <strong><i><%=article.title %></i></strong></br>
+                  <%=article.text  %></br>
+              <div class = "col-xs-12">
+              	<i><%=link_to 'show', article_path(article)%></i> 
+                <i><%=link_to 'edit', edit_article_path(article)%></i>
+                <i><%=link_to 'delete', article_path(article), method: :delete, data:{confirm: "Are You sure?"}%></i>
+            </div> 
+           
+          </div>
+        </div>
+       </li></br>
 	<%end%>
-</table>
+  </ul> 
+
