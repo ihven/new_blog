@@ -3,9 +3,13 @@
 	<div class = "container">
           <div class = "row">
            <i>author: </i>
-           <%=current_user.username %></br>       
-           <%=f.text_area:body %></br>               
-           <%=f.submit:'save comment' %>
+           <% if user_signed_in? %> 
+            <%=current_user.username %></br>       
+          <% else %>
+            <i>not identified</i></br>
+          <% end %>
+           <%=f.text_area:body, cols: "60", rows: "5" %></br>               
+           <div class = "actions"><%=f.submit:'save comment', :class=>"btn btn-danger" %></div>
          </div>
       </div>
 <%end%>
