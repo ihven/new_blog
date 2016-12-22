@@ -1,6 +1,6 @@
 class ArticlesController < ApplicationController
 
-      before_filter :authenticate_user!, :only => [:new, :create]
+      before_action :authenticate_user!, :only => [:create, :update, :destroy]
 
       def new
       end

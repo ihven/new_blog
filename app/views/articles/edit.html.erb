@@ -1,15 +1,20 @@
-Edit Article:
+<strong>Edit Article:</strong></br>
 
 <%= form_for :article, url: article_path(@article), method: :put do |f| %>
-	<p>
+	<div class = "container">
+          <div class = "row">
   		<%=f.label :title %></br>
-  		<%=f.text_field :title %>
-	</p>
+  		<%=f.text_field :title, cols: "35" %></br>
+	  </div>
+        </div>
 
-	<p>
+
+	<div class = "container">
+          <div class = "row">
 		<%=f.label :text %></br>
-                <%=f.text_area :text %>
-         </p>
+                <%=f.text_area :text, cols: "35", rows: "5" %></br>
+         </div>
+       </div>
 
          <%=f.submit :'Save article'%>
 <% end %>
